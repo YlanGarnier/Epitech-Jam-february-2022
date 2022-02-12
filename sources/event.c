@@ -17,6 +17,10 @@ clock_td *clock, sound_td *sound)
         sprite->cursor_pos.y = window->event.mouseMove.y - 36;
         sfSprite_setPosition(sprite->cursor, sprite->cursor_pos);
     }
+    if (window->event.type == sfEvtMouseButtonPressed) {
+        window->count += 1;
+        get_count(window->count_text, window->count);
+    }
 }
 
 void analyse_events(window_td *window, sprite_td *sprite,
