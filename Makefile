@@ -4,9 +4,19 @@
 ## File description:
 ## rule them all
 ##
+
 CC	=	gcc
 
-FILE	=	sources/clicker_heroes	\
+FILE	=	sources/rect.c  \
+		sources/clock.c \
+		sources/sprite.c        \
+		sources/pos.c   \
+		sources/sound.c \
+		sources/event.c \
+		sources/display.c       \
+		sources/window.c        \
+		sources/usage.c \
+		sources/main.c
 
 NAME	=	success_clicker
 
@@ -14,16 +24,16 @@ OBJ	=	$(FILE:.c=.o)
 
 VALGRIND	=	-g
 
-CFLAGS 	=	-Wextra -Wall
+CFLAGS	=	-Wextra -Wall
 
 CSFMLFLAGS	=	-l csfml-window -l csfml-system -l csfml-audio -l csfml-graphics
 
-CPPFLAGS	=	-I ./includes
+CPPFLAGS	=	-I ./include
 
-all:	clicker
+all:	$(NAME)
 
-clicker:	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CSFMLFLAGS)
+$(NAME):	$(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(CSFMLFLAGS)
 	@echo -e "\n\e[92mSuccessfully compiled\e[0m"
 
 clean:
