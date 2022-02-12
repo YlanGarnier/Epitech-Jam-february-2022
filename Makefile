@@ -4,6 +4,7 @@
 ## File description:
 ## rule them all
 ##
+CC	=	gcc
 
 FILE	=	sources/clicker_heroes	\
 
@@ -11,14 +12,18 @@ NAME	=	success_clicker
 
 OBJ	=	$(FILE:.c=.o)
 
-CFLAGS 	=	-g -Wextra -Wall
+VALGRIND	=	-g
+
+CFLAGS 	=	-Wextra -Wall
 
 CSFMLFLAGS	=	-l csfml-window -l csfml-system -l csfml-audio -l csfml-graphics
+
+CPPFLAGS	=	-I ./includes
 
 all:	clicker
 
 clicker:	$(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) $(CSFMLFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(CSFMLFLAGS)
 	@echo -e "\n\e[92mSuccessfully compiled\e[0m"
 
 clean:
