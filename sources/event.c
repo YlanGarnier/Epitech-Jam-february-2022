@@ -20,6 +20,7 @@ clock_td *clock, sound_td *sound)
     if (window->event.type == sfEvtMouseButtonPressed) {
         window->count += 1;
         get_count(window->count_text, window->count);
+        sfSound_play(sound->click0);
     }
 }
 

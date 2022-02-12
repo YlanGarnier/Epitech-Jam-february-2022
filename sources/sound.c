@@ -19,10 +19,10 @@ sound_td *all_sounds(void)
 {
     sound_td *sound = malloc(sizeof(sound_td));
 
-    sound->music1 = sfMusic_createFromFile("assets/music1.ogg");
+    sound->music1 = sfMusic_createFromFile("assets/music2.ogg");
     sfMusic_setLoop(sound->music1, sfTrue);
     sound->click0 = sfSound_create();
-    sound->click0_buf = sfSoundBuffer_createFromFile("assets/son.ogg");
+    sound->click0_buf = sfSoundBuffer_createFromFile("assets/click0.ogg");
     sfSound_setBuffer(sound->click0, sound->click0_buf);
     return (sound);
 }
