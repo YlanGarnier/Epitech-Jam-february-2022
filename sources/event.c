@@ -22,8 +22,6 @@ clock_td *clock, sound_td *sound)
 void analyse_events(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound)
 {
-    while (sfRenderWindow_pollEvent(window->window, &window->event)) {
-        if (window->state == 3)
-            game_events(window, sprite, clock, sound);
-    }
+    while (sfRenderWindow_pollEvent(window->window, &window->event))
+        game_events(window, sprite, clock, sound);
 }
