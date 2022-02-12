@@ -33,7 +33,7 @@ CPPFLAGS	=	-I ./include
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(CSFMLFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(CSFMLFLAGS)
 	@echo -e "\n\e[92mSuccessfully compiled\e[0m"
 
 clean:
