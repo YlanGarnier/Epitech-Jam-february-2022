@@ -31,5 +31,9 @@ sprite_td *all_sprites(void)
 
     sprite->cursor = create_sprite("assets/cursor.png");
     sfSprite_scale(sprite->cursor, get_offset(0.8, 0.8));
+    sprite->player = create_sprite("assets/homeless.png");
+    sfSprite_scale(sprite->player, get_offset(3, 3));
+    set_pos(sprite->player, 550, 550);
+    sprite->bg0 = create_sprite("assets/bg0.png");
     return sprite;
 }

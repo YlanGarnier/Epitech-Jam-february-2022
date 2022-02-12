@@ -23,17 +23,26 @@ typedef struct window_s {
     int state;
     sfEvent event;
     sfRenderWindow *window;
+    int count;
+    sfText *count_text;
+    sfFont *count_font;
+    char *count_buf;
 } window_td;
 
 typedef struct sprite_s {
     sfSprite *cursor;
     sfVector2f cursor_pos;
+    sfSprite *player;
+    sfSprite *bg0;
 } sprite_td;
 
 typedef struct clock_s {
 } clock_td;
 
 typedef struct sound_s {
+    sfMusic *music1;
+    sfSound *click0;
+    sfSoundBuffer *click0_buf;
 } sound_td;
 
 sfIntRect change_rect(sfIntRect rect, int left, int left_max);
@@ -58,6 +67,7 @@ sfVector2f get_offset(float x, float y);
 void move_background(sprite_td *sprite);
 sfSprite *create_sprite(char *path_texture);
 sprite_td *all_sprites(void);
+void get_count(sfText *text, int count);
 sfRenderWindow *create_window(char *title, sfEvent event);
 window_td *set_window(void);
 int usage(void);
