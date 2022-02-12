@@ -43,7 +43,9 @@ int main(int ac, char **av)
     sprite_td *sprite = all_sprites();
     clock_td *clock = all_clocks();;
     sound_td *sound = all_sounds();
-
+    //music(sound);
+    //init_sound(sound);
+    //sfSound_play(sound->sound);
     if (ac > 1 && (strcmp(av[1], "-h") == 0 || strcmp(av[1], "--help") == 0)) {
         destroy_all(window, sprite, clock, sound);
         return usage();

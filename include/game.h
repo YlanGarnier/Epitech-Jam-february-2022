@@ -34,6 +34,9 @@ typedef struct clock_s {
 } clock_td;
 
 typedef struct sound_s {
+    sfSoundBuffer *sound_buff;
+    sfSound *sound;
+    sfMusic *musique;
 } sound_td;
 
 sfIntRect change_rect(sfIntRect rect, int left, int left_max);
@@ -61,5 +64,8 @@ sprite_td *all_sprites(void);
 sfRenderWindow *create_window(char *title, sfEvent event);
 window_td *set_window(void);
 int usage(void);
+void init_sound(sound_td *s);
+void son(sound_td *s);
+void music(sound_td *s);
 
 #endif
