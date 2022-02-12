@@ -26,14 +26,13 @@ void init_sound(sound_td *s)
 void destroy_sounds(sound_td *sound)
 {
     sfMusic_destroy(sound->musique);
-    //sfSound_destroy(sound->leson);
-    //sfSoundBuffer_destroy(sound->lebuffer_duson);
+    sfSound_destroy(sound->sound);
+    sfSoundBuffer_destroy(sound->sound_buff);
     return;
 }
 
 sound_td *all_sounds(void)
 {
     sound_td *sound = malloc(sizeof(sound_td));
-
     return (sound);
 }
