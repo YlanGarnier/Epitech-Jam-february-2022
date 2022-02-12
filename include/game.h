@@ -48,7 +48,6 @@ void analyse_events(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound);
 void analyse_clocks(window_td *window, sprite_td *sprite, clock_td *clock,
 sound_td *sound);
-void score_display(window_td *window);
 void display(window_td *window, sprite_td *sprite);
 void destroy_sounds(sound_td *sound);
 void play_sounds(sound_td *sound);
