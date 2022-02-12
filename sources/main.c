@@ -28,7 +28,7 @@ int main(int ac, char **av)
     clock_td *clock;
     sound_td *sound = all_sounds();
 
-    if (ac > 1 && strcmp(av[1], "-h") == 0 && strcmp(av[1], "--help") == 0) {
+    if (ac > 1 && (strcmp(av[1], "-h") == 0 || strcmp(av[1], "--help") == 0)) {
         destroy_all(window, sprite, clock, sound);
         return usage();
     }
