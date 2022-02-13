@@ -44,7 +44,7 @@ sound_td *sound)
     }
     if (clock->player_anim > 4.2)
         sfClock_restart(clock->clock_player_anim);
-    if (clock->click_sound > 0.5) {
+    if (clock->click_sound > 0.1) {
         sfClock_restart(clock->clock_click_sound);
         sound->click_played = 0;
     }
