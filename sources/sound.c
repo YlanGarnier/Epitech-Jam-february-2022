@@ -11,8 +11,9 @@ static void init_sound(sound_td *s)
 {
     s->music = sfMusic_createFromFile("assets/music2.ogg");
     sfMusic_setLoop(s->music, sfTrue);
+    sfMusic_setVolume(s->music, 10.f);
     sfMusic_play(s->music);
-    s->tab_sound[0].sound_buff = sfSoundBuffer_createFromFile("assets/gorilla0.ogg");
+    s->tab_sound[0].sound_buff = sfSoundBuffer_createFromFile("assets/click0.ogg");
     s->tab_sound[1].sound_buff = sfSoundBuffer_createFromFile("assets/sound1.ogg");
     s->tab_sound[2].sound_buff = sfSoundBuffer_createFromFile("assets/sound2.ogg");
     s->tab_sound[3].sound_buff = sfSoundBuffer_createFromFile("assets/sound3.ogg");
