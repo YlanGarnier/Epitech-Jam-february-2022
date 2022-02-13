@@ -36,6 +36,5 @@ void display(window_td *window, sprite_td *sprite)
         sfRenderWindow_drawText(window->window, window->quote_text, NULL);
         sfRenderWindow_drawSprite(window->window, sprite->gorilla, NULL);
     }
-    sfRenderWindow_drawSprite(window->window, sprite->gorilla, NULL);
     sfRenderWindow_drawSprite(window->window, sprite->cursor, NULL);
 }

@@ -70,8 +70,10 @@ typedef struct sound_s {
     sfSound *click;
     sfSoundBuffer *yeah_buf;
     sfSound *yeah;
-    sfSoundBuffer*gorilla_buf;
+    sfSoundBuffer *gorilla_buf;
     sfSound *gorilla;
+    sfSoundBuffer *whoosh_buf;
+    sfSound *whoosh;
     int click_played;
 } sound_td;
 

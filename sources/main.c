@@ -27,6 +27,7 @@ clock_td *clock, sound_td *sound)
         window->multiplier *= 5;
         update_textures(window, sprite, sound);
         window->textures_updated = 1;
+        sfSound_play(sound->whoosh);
     }
     else if (window->count % (100 * window->multiplier) != 0)
         window->textures_updated = 0;
