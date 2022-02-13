@@ -15,6 +15,8 @@ void destroy_sounds(sound_td *sound)
     sfSoundBuffer_destroy(sound->click_buf);
     sfSound_destroy(sound->yeah);
     sfSoundBuffer_destroy(sound->yeah_buf);
+    sfSound_destroy(sound->gorilla);
+    sfSoundBuffer_destroy(sound->gorilla_buf);
     return;
 }
 
@@ -34,5 +36,8 @@ sound_td *all_sounds(void)
     sound->yeah = sfSound_create();
     sound->yeah_buf = sfSoundBuffer_createFromFile("assets/yeah.ogg");
     sfSound_setBuffer(sound->yeah, sound->yeah_buf);
+    sound->gorilla = sfSound_create();
+    sound->gorilla_buf = sfSoundBuffer_createFromFile("assets/gorilla.ogg");
+    sfSound_setBuffer(sound->gorilla, sound->gorilla_buf);
     return sound;
 }

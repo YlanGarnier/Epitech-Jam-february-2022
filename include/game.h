@@ -44,12 +44,17 @@ typedef struct sprite_s {
     int player_unzoom;
     char *bg_path;
     sfSprite *bg;
+    sfSprite *gorilla;
+    sfIntRect gorilla_rect;
 } sprite_td;
 
 typedef struct clock_s {
     sfClock *clock_player_anim;
     sfTime time_player_anim;
     float player_anim;
+    sfClock *clock_gorilla_anim;
+    sfTime time_gorilla_anim;
+    float gorilla_anim;
     sfClock *clock_player_unzoom;
     sfTime time_player_unzoom;
     float player_unzoom;
@@ -65,6 +70,8 @@ typedef struct sound_s {
     sfSound *click;
     sfSoundBuffer *yeah_buf;
     sfSound *yeah;
+    sfSoundBuffer*gorilla_buf;
+    sfSound *gorilla;
     int click_played;
 } sound_td;
 

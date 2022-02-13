@@ -43,6 +43,11 @@ clock_td *clock, sound_td *sound)
     }
     if (window->lvl == 0 && clock->player_anim > 4.2)
         sfClock_restart(clock->clock_player_anim);
+    if (window->lvl >= 5 && clock->gorilla_anim >= 0.5) {
+        sprite->gorilla_rect = change_rect(sprite->gorilla_rect, 125, 125);
+        sfSprite_setTextureRect(sprite->gorilla, sprite->gorilla_rect);
+        sfClock_restart(clock->clock_gorilla_anim);
+    }
 }
 
 void analyse_clocks(window_td *window, sprite_td *sprite, clock_td *clock,
@@ -66,6 +71,8 @@ clock_td *set_time(clock_td *clock)
 {
     clock->time_player_anim = sfClock_getElapsedTime(clock->clock_player_anim);
     clock->player_anim = clock->time_player_anim.microseconds / 1000000.0;
+    clock->time_gorilla_anim = sfClock_getElapsedTime(clock->clock_gorilla_anim);
+    clock->gorilla_anim = clock->time_gorilla_anim.microseconds / 1000000.0;
     clock->time_player_unzoom = sfClock_getElapsedTime(clock->clock_player_unzoom);
     clock->player_unzoom = clock->time_player_unzoom.microseconds / 1000000.0;
     clock->time_click_sound = sfClock_getElapsedTime(clock->clock_click_sound);
@@ -78,6 +85,7 @@ clock_td *all_clocks(void)
     clock_td *clock = malloc(sizeof(clock_td));
 
     clock->clock_player_anim = sfClock_create();
+    clock->clock_gorilla_anim = sfClock_create();
     clock->clock_player_unzoom = sfClock_create();
     clock->clock_click_sound = sfClock_create();
     return clock;

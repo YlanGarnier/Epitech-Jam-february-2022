@@ -33,5 +33,10 @@ sprite_td *all_sprites(void)
     sfSprite_setTextureRect(sprite->player, sprite->player_rect);
     sfSprite_scale(sprite->player, get_offset(3, 3));
     set_pos(sprite->player, 550, 550);
+    sprite->gorilla = create_sprite("assets/gorilla.png");
+    sprite->gorilla_rect = create_rect(125, 75);
+    sfSprite_scale(sprite->gorilla, get_offset(8, 8));
+    sfSprite_setTextureRect(sprite->gorilla, sprite->gorilla_rect);
+    set_pos(sprite->gorilla, 800, 325);
     return sprite;
 }
