@@ -23,7 +23,7 @@ clock_td *clock, sound_td *sound)
             sprite->player_unzoom = 1;
         }
         if (sound->click_played == 0) {
-            sfSound_play(sound->tab_sound[0].sound);
+            sfSound_play(sound->click);
             sound->click_played = 1;
         }
         window->count += 1;

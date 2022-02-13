@@ -33,6 +33,7 @@ typedef struct window_s {
 typedef struct sprite_s {
     sfSprite *cursor;
     sfVector2f cursor_pos;
+    char *player_path;
     sfSprite *player;
     sfIntRect player_rect;
     int player_unzoom;
@@ -51,14 +52,11 @@ typedef struct clock_s {
     float click_sound;
 } clock_td;
 
-typedef struct tab_sound_s {
-    sfSoundBuffer *sound_buff;
-    sfSound *sound;
-} tab_sound_td;
-
 typedef struct sound_s {
-    tab_sound_td tab_sound[4];
     sfMusic *music;
+    char *click_path;
+    sfSoundBuffer *click_buf;
+    sfSound *click;
     int click_played;
 } sound_td;
 
