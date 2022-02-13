@@ -24,7 +24,7 @@ clock_td *clock, sound_td *sound)
 {
     static int a = 0;
 
-    if (window->count == window->lvl + 100) {
+    if (window->count == a + 100) {
         window->lvl += 1;
         a = window->count;
     }
