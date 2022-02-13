@@ -33,6 +33,7 @@ window_td *set_window(void)
 
     window->state = 1;
     window->count = 0;
+    window->textures_updated = 1;
     window->lvl = 0;
     window->count_text = sfText_create();
     window->count_font = sfFont_createFromFile("fonts/badaboom.ttf");

@@ -30,23 +30,30 @@ clock_td *clock, sound_td *sound)
     }
 }
 
+void anim_stage_0(window_td *window, sprite_td *sprite,
+clock_td *clock, sound_td *sound)
+{
+    if (window->lvl == 0 && clock->player_anim <= 4) {
+	sprite->player_rect = change_rect(sprite->player_rect, 0, 0);
+        sfSprite_setTextureRect(sprite->player, sprite->player_rect);
+    }
+    if (window->lvl == 0 && clock->player_anim > 4) {
+        sprite->player_rect = change_rect(sprite->player_rect, 150, 150);
+        sfSprite_setTextureRect(sprite->player, sprite->player_rect);
+    }
+    if (window->lvl == 0 && clock->player_anim > 4.2)
+        sfClock_restart(clock->clock_player_anim);
+}
+
 void analyse_clocks(window_td *window, sprite_td *sprite, clock_td *clock,
 sound_td *sound)
 {
     check_player_unzoom(window, sprite, clock, sound);
-    if (clock->player_anim <= 4) {
-        sprite->player_rect = change_rect(sprite->player_rect, 0, 0);
+    anim_stage_0(window, sprite, clock, sound);
+    if (window->lvl != 0 && clock->player_anim >= 1) {
+        sprite->player_rect = change_rect(sprite->player_rect, 150, sprite->player_max);
         sfSprite_setTextureRect(sprite->player, sprite->player_rect);
-    }
-    if (clock->player_anim > 4) {
-        sprite->player_rect = change_rect(sprite->player_rect, 150, 150);
-        sfSprite_setTextureRect(sprite->player, sprite->player_rect);
-    }
-    if (clock->player_anim > 4.2)
         sfClock_restart(clock->clock_player_anim);
-    if (clock->click_sound > 0.1) {
-        sfClock_restart(clock->clock_click_sound);
-        sound->click_played = 0;
     }
     return;
 }

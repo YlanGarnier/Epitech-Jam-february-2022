@@ -25,6 +25,7 @@ typedef struct window_s {
     sfRenderWindow *window;
     int count;
     int lvl;
+    int textures_updated;
     sfText *count_text;
     sfFont *count_font;
     char *count_buf;
@@ -36,8 +37,10 @@ typedef struct sprite_s {
     char *player_path;
     sfSprite *player;
     sfIntRect player_rect;
+    int player_max;
     int player_unzoom;
-    sfSprite *bg0;
+    char *bg_path;
+    sfSprite *bg;
 } sprite_td;
 
 typedef struct clock_s {
@@ -72,6 +75,7 @@ void analyse_events(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound);
 void analyse_clocks(window_td *window, sprite_td *sprite, clock_td *clock,
 sound_td *sound);
+void update_textures(window_td *window, sprite_td *sprite, sound_td *sound);
 void display(window_td *window, sprite_td *sprite);
 void destroy_sounds(sound_td *sound);
 void play_sounds(sound_td *sound);

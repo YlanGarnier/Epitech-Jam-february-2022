@@ -22,7 +22,10 @@ sprite_td *all_sprites(void)
     sprite_td *sprite = malloc(sizeof(sprite_td));
 
     sprite->cursor = create_sprite("assets/cursor.png");
+    sprite->bg_path = strdup("assets/bg0.png");
+    sprite->bg = create_sprite(sprite->bg_path);
     sfSprite_scale(sprite->cursor, get_offset(0.8, 0.8));
+    sprite->player_max = 450;
     sprite->player_unzoom = 0;
     sprite->player_path = strdup("assets/player0.png");
     sprite->player = create_sprite(sprite->player_path);
@@ -30,6 +33,5 @@ sprite_td *all_sprites(void)
     sfSprite_setTextureRect(sprite->player, sprite->player_rect);
     sfSprite_scale(sprite->player, get_offset(3, 3));
     set_pos(sprite->player, 550, 550);
-    sprite->bg0 = create_sprite("assets/bg0.png");
     return sprite;
 }

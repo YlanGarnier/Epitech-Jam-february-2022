@@ -22,12 +22,13 @@ clock_td *clock, sound_td *sound)
 void check_level(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound)
 {
-    static int a = 0;
-
-    if (window->count == a + 100) {
-        window->lvl += 1;
-        a = window->count;
+    if (window->textures_updated == 0 && window->count % 100 == 0) {
+        window->lvl++;
+        update_textures(window, sprite, sound);
+        window->textures_updated = 1;
     }
+    else if (window->count % 100 != 0)
+        window->textures_updated = 0;
 }
 
 void success_clicker(window_td *window, sprite_td *sprite,
