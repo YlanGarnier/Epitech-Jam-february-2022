@@ -16,15 +16,6 @@ sfSprite *create_sprite(char *path_texture)
     return sprite;
 }
 
-sfVector2f get_offset(float x, float y)
-{
-    sfVector2f offset;
-
-    offset.x = x;
-    offset.y = y;
-    return offset;
-}
-
 sprite_td *all_sprites(void)
 {
     sprite_td *sprite = malloc(sizeof(sprite_td));
@@ -32,6 +23,8 @@ sprite_td *all_sprites(void)
     sprite->cursor = create_sprite("assets/cursor.png");
     sfSprite_scale(sprite->cursor, get_offset(0.8, 0.8));
     sprite->player = create_sprite("assets/homeless.png");
+    sprite->player_rect = create_rect(150, 150);
+    sfSprite_setTextureRect(sprite->player, sprite->player_rect);
     sfSprite_scale(sprite->player, get_offset(3, 3));
     set_pos(sprite->player, 550, 550);
     sprite->bg0 = create_sprite("assets/bg0.png");

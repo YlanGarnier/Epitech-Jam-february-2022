@@ -33,10 +33,14 @@ typedef struct sprite_s {
     sfSprite *cursor;
     sfVector2f cursor_pos;
     sfSprite *player;
+    sfIntRect player_rect;
     sfSprite *bg0;
 } sprite_td;
 
 typedef struct clock_s {
+    sfClock *clock_player_anim;
+    sfTime time_player_anim;
+    float player_anim;
 } clock_td;
 
 typedef struct sound_s {

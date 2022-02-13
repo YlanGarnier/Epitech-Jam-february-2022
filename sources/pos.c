@@ -8,6 +8,15 @@
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 
+sfVector2f get_offset(float x, float y)
+{
+    sfVector2f offset;
+
+    offset.x = x;
+    offset.y = y;
+    return offset;
+}
+
 void set_pos(sfSprite *sprite, float x, float y)
 {
     sfVector2f pos;

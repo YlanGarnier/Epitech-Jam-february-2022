@@ -34,10 +34,12 @@ window_td *set_window(void)
     window->state = 1;
     window->count = 0;
     window->count_text = sfText_create();
-    window->count_font = sfFont_createFromFile("fonts/bubblegum.ttf");
+    window->count_font = sfFont_createFromFile("fonts/badaboom.ttf");
     sfText_setFont(window->count_text, window->count_font);
     sfText_setCharacterSize(window->count_text, 100);
     sfText_setFillColor(window->count_text, sfColor_fromRGB(0, 204, 0));
     get_count(window->count_text, window->count);
+    sfText_setPosition(window->count_text, get_offset(15, -10));
+    sfText_setOutlineThickness(window->count_text, 3);
     return window;
 }
