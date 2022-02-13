@@ -43,7 +43,7 @@ clock_td *clock, sound_td *sound)
     }
     if (window->lvl == 0 && clock->player_anim > 4.2)
         sfClock_restart(clock->clock_player_anim);
-    if (window->lvl >= 5 && clock->gorilla_anim >= 0.5) {
+    if (window->lvl >= 5 && clock->gorilla_anim >= 0.2) {
         sprite->gorilla_rect = change_rect(sprite->gorilla_rect, 125, 125);
         sfSprite_setTextureRect(sprite->gorilla, sprite->gorilla_rect);
         sfClock_restart(clock->clock_gorilla_anim);
