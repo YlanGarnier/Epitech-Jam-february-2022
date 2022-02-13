@@ -19,6 +19,17 @@ clock_td *clock, sound_td *sound)
     destroy_sounds(sound);
 }
 
+void check_level(window_td *window, sprite_td *sprite,
+clock_td *clock, sound_td *sound)
+{
+    static int a = 0;
+
+    if (window->count == window->lvl + 100) {
+        window->lvl += 1;
+        a = window->count;
+    }
+}
+
 void success_clicker(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound)
 {
@@ -32,6 +43,7 @@ clock_td *clock, sound_td *sound)
 void game(window_td *window, sprite_td *sprite, clock_td *clock,
 sound_td *sound)
 {
+    check_level(window, sprite, clock, sound);
     analyse_events(window, sprite, clock, sound);
     success_clicker(window, sprite, clock, sound);
     display(window, sprite);
