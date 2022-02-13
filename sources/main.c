@@ -31,6 +31,7 @@ clock_td *clock, sound_td *sound)
     else if (window->count % (100 * window->multiplier) != 0)
         window->textures_updated = 0;
     if (window->lvl == 5) {
+        sfSound_play(sound->yeah);
         sfText_setCharacterSize(window->count_text, 200);
         sfText_setString(window->count_text, "SUCCESS IS YOURS!");
         sfText_setFillColor(window->count_text, sfRed);

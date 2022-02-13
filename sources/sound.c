@@ -13,6 +13,8 @@ void destroy_sounds(sound_td *sound)
     sfMusic_destroy(sound->music);
     sfSound_destroy(sound->click);
     sfSoundBuffer_destroy(sound->click_buf);
+    sfSound_destroy(sound->yeah);
+    sfSoundBuffer_destroy(sound->yeah_buf);
     return;
 }
 
@@ -29,5 +31,8 @@ sound_td *all_sounds(void)
     sound->click = sfSound_create();
     sound->click_buf = sfSoundBuffer_createFromFile(sound->click_path);
     sfSound_setBuffer(sound->click, sound->click_buf);
+    sound->yeah = sfSound_create();
+    sound->yeah_buf = sfSoundBuffer_createFromFile("assets/yeah.ogg");
+    sfSound_setBuffer(sound->yeah, sound->yeah_buf);
     return sound;
 }
