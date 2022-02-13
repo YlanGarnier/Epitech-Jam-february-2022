@@ -23,9 +23,10 @@ sound_td *all_sounds(void)
     sfMusic_setLoop(sound->music, sfTrue);
     sfMusic_setVolume(sound->music, 10.f);
     sfMusic_play(sound->music);
+    sound->click_played = 0;
     sound->click_path = strdup("assets/click0.ogg");
-    sound->click_buf = sfSoundBuffer_createFromFile(sound->click_path);
     sound->click = sfSound_create();
+    sound->click_buf = sfSoundBuffer_createFromFile(sound->click_path);
     sfSound_setBuffer(sound->click, sound->click_buf);
     return sound;
 }

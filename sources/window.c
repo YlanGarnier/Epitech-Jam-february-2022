@@ -22,7 +22,7 @@ void get_count(sfText *text, int count)
     char *str_count = malloc(sizeof(char) * 6);
 
     str_count[5] = '\0';
-    sprintf(str_count, "Count: %d", count);
+    sprintf(str_count, "%d$", count);
     sfText_setString(text, str_count);
     free(str_count);
 }
