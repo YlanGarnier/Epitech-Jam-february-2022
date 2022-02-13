@@ -50,7 +50,7 @@ sound_td *sound)
 {
     check_player_unzoom(window, sprite, clock, sound);
     anim_stage_0(window, sprite, clock, sound);
-    if (window->lvl != 0 && clock->player_anim >= 1) {
+    if (window->lvl != 0 && clock->player_anim >= 0.5) {
         sprite->player_rect = change_rect(sprite->player_rect, 150, sprite->player_max);
         sfSprite_setTextureRect(sprite->player, sprite->player_rect);
         sfClock_restart(clock->clock_player_anim);
