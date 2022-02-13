@@ -53,7 +53,7 @@ int main(int ac, char **av)
 {
     window_td *window = set_window();
     sprite_td *sprite = all_sprites();
-    clock_td *clock = all_clocks();;
+    clock_td *clock = all_clocks();
     sound_td *sound = all_sounds();
 
     if (ac > 1 && (strcmp(av[1], "-h") == 0 || strcmp(av[1], "--help") == 0)) {
