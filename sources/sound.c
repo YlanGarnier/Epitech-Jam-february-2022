@@ -5,6 +5,7 @@
 ** contains all functions linked to sound
 */
 
+#include <string.h>
 #include "game.h"
 
 void destroy_sounds(sound_td *sound)
