@@ -25,8 +25,8 @@ clock_td *clock, sound_td *sound)
     if (sprite->player_unzoom == 1 && clock->player_unzoom > 0.06 && clock->player_unzoom <= 0.07)
         sfSprite_move(sprite->player, get_offset(0, 1.8));
     if (sprite->player_unzoom == 1 && clock->player_unzoom > 0.07) {
-        sfSprite_move(sprite->player, get_offset(0, 2));
         sprite->player_unzoom = 0;
+        set_pos(sprite->player, 550, 550);
     }
 }
 
