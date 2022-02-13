@@ -50,10 +50,14 @@ typedef struct clock_s {
     float click_sound;
 } clock_td;
 
+typedef struct tab_sound_s {
+    sfSoundBuffer *sound_buff;
+    sfSound *sound;
+} tab_sound_td;
+
 typedef struct sound_s {
-    sfMusic *music1;
-    sfSound *click0;
-    sfSoundBuffer *click0_buf;
+    tab_sound_td tab_sound[4];
+    sfMusic *music;
     int click_played;
 } sound_td;
 

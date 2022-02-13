@@ -50,7 +50,7 @@ int main(int ac, char **av)
     }
     window->window = create_window("Success Clicker", window->event);
     window->state = 3;
-    sfMusic_play(sound->music1);
+    sfMusic_play(sound->music);
     while (sfRenderWindow_isOpen(window->window))
         game(window, sprite, clock, sound);
     destroy_all(window, sprite, clock, sound);
