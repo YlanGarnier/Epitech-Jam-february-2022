@@ -24,6 +24,7 @@ typedef struct window_s {
     sfEvent event;
     sfRenderWindow *window;
     int count;
+    int lvl;
     sfText *count_text;
     sfFont *count_font;
     char *count_buf;
