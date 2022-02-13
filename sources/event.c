@@ -18,9 +18,16 @@ clock_td *clock, sound_td *sound)
         sfSprite_setPosition(sprite->cursor, sprite->cursor_pos);
     }
     if (window->event.type == sfEvtMouseButtonPressed) {
+        if (sprite->player_unzoom == 0) {
+            sfClock_restart(clock->clock_player_unzoom);
+            sprite->player_unzoom = 1;
+        }
+        if (sound->click_played == 0) {
+            sfSound_play(sound->click0);
+            sound->click_played = 1;
+        }
         window->count += 1;
         get_count(window->count_text, window->count);
-        sfSound_play(sound->click0);
     }
 }
 

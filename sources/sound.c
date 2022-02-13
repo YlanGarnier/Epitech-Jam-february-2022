@@ -19,6 +19,7 @@ sound_td *all_sounds(void)
 {
     sound_td *sound = malloc(sizeof(sound_td));
 
+    sound->click_played = 0;
     sound->music1 = sfMusic_createFromFile("assets/music2.ogg");
     sfMusic_setLoop(sound->music1, sfTrue);
     sound->click0 = sfSound_create();

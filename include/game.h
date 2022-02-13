@@ -34,6 +34,7 @@ typedef struct sprite_s {
     sfVector2f cursor_pos;
     sfSprite *player;
     sfIntRect player_rect;
+    int player_unzoom;
     sfSprite *bg0;
 } sprite_td;
 
@@ -41,12 +42,19 @@ typedef struct clock_s {
     sfClock *clock_player_anim;
     sfTime time_player_anim;
     float player_anim;
+    sfClock *clock_player_unzoom;
+    sfTime time_player_unzoom;
+    float player_unzoom;
+    sfClock *clock_click_sound;
+    sfTime time_click_sound;
+    float click_sound;
 } clock_td;
 
 typedef struct sound_s {
     sfMusic *music1;
     sfSound *click0;
     sfSoundBuffer *click0_buf;
+    int click_played;
 } sound_td;
 
 sfIntRect change_rect(sfIntRect rect, int left, int left_max);
