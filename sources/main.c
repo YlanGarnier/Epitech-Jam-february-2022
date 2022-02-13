@@ -22,7 +22,8 @@ clock_td *clock, sound_td *sound)
 void check_level(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound)
 {
-    if (window->lvl <= 5 && window->textures_updated == 0 && window->count % (100 * window->multiplier) == 0) {
+    printf("%d\n", window->lvl);
+    if (window->lvl < 5 && window->textures_updated == 0 && window->count % (100 * window->multiplier) == 0) {
         window->lvl++;
         window->multiplier *= 5;
         update_textures(window, sprite, sound);
