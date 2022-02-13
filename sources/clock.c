@@ -55,6 +55,10 @@ sound_td *sound)
         sfSprite_setTextureRect(sprite->player, sprite->player_rect);
         sfClock_restart(clock->clock_player_anim);
     }
+    if (sound->click_played == 1 && clock->click_sound >= 0.1) {
+        sound->click_played = 0;
+        sfClock_restart(clock->clock_click_sound);
+    }
     return;
 }
 

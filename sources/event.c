@@ -25,8 +25,9 @@ clock_td *clock, sound_td *sound)
         if (sound->click_played == 0) {
             sfSound_play(sound->click);
             sound->click_played = 1;
+            sfClock_restart(clock->clock_click_sound);
         }
-        window->count += 1;
+        window->count += 5;
         get_count(window->count_text, window->count);
     }
 }

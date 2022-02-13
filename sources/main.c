@@ -22,12 +22,12 @@ clock_td *clock, sound_td *sound)
 void check_level(window_td *window, sprite_td *sprite,
 clock_td *clock, sound_td *sound)
 {
-    if (window->textures_updated == 0 && window->count % 100 == 0) {
+    if (window->textures_updated == 0 && window->count % 500 == 0) {
         window->lvl++;
         update_textures(window, sprite, sound);
         window->textures_updated = 1;
     }
-    else if (window->count % 100 != 0)
+    else if (window->count % 500 != 0)
         window->textures_updated = 0;
 }
 
