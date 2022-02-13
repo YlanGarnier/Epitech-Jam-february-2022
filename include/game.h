@@ -30,6 +30,8 @@ typedef struct window_s {
     sfText *count_text;
     sfFont *count_font;
     char *count_buf;
+    sfText *quote_text;
+    sfFont *quote_font;
 } window_td;
 
 typedef struct sprite_s {

@@ -42,7 +42,15 @@ window_td *set_window(void)
     sfText_setCharacterSize(window->count_text, 100);
     sfText_setFillColor(window->count_text, sfColor_fromRGB(0, 204, 0));
     get_count(window->count_text, window->count);
-    sfText_setPosition(window->count_text, get_offset(15, -10));
+    sfText_setPosition(window->count_text, get_offset(15, 0));
     sfText_setOutlineThickness(window->count_text, 3);
+    window->quote_text = sfText_create();
+    window->quote_font = sfFont_createFromFile("fonts/badaboom.ttf");
+    sfText_setFont(window->quote_text, window->quote_font);
+    sfText_setCharacterSize(window->quote_text, 70);
+    sfText_setFillColor(window->quote_text, sfBlue);
+    sfText_setPosition(window->quote_text, get_offset(200, 250));
+    sfText_setOutlineThickness(window->count_text, 3);
+    sfText_setString(window->quote_text, "I could either watch it happen or be a part of it. - Elon Musk");
     return window;
 }
