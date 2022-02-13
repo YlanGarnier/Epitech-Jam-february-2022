@@ -61,6 +61,8 @@ typedef struct sound_s {
     char *click_path;
     sfSoundBuffer *click_buf;
     sfSound *click;
+    sfSoundBuffer *yeah_buf;
+    sfSound *yeah;
     int click_played;
 } sound_td;
 
