@@ -26,6 +26,7 @@ typedef struct window_s {
     int count;
     int lvl;
     int textures_updated;
+    int multiplier;
     sfText *count_text;
     sfFont *count_font;
     char *count_buf;
