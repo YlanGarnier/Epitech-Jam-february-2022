@@ -19,6 +19,7 @@ void update_textures(window_td *window, sprite_td *sprite, sound_td *sound)
     texture = sfTexture_createFromFile(sprite->player_path, NULL);
     sfSprite_setTexture(sprite->player, texture, sfFalse);
     sound->click_path[12] = window->lvl + 48;
+    sfSoundBuffer_destroy(sound->click_buf);
     sound->click_buf = sfSoundBuffer_createFromFile(sound->click_path);
     sfSound_setBuffer(sound->click, sound->click_buf);
 }
